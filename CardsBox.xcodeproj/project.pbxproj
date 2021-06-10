@@ -8,22 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		F2029D2B26660EE600B2293B /* CardsBoxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2029D2A26660EE600B2293B /* CardsBoxApp.swift */; };
-		F2029D2D26660EE600B2293B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2029D2C26660EE600B2293B /* ContentView.swift */; };
+		F2029D2D26660EE600B2293B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2029D2C26660EE600B2293B /* HomeView.swift */; };
 		F2029D2F26660EE800B2293B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2029D2E26660EE800B2293B /* Assets.xcassets */; };
 		F2029D3226660EE800B2293B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2029D3126660EE800B2293B /* Preview Assets.xcassets */; };
 		F2029D3426660EE800B2293B /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2029D3326660EE800B2293B /* Persistence.swift */; };
 		F2029D3726660EE800B2293B /* CardsBox.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F2029D3526660EE800B2293B /* CardsBox.xcdatamodeld */; };
+		F298567D267280DA00488327 /* CardViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F298567C267280DA00488327 /* CardViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F2029D2726660EE600B2293B /* CardsBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardsBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2029D2A26660EE600B2293B /* CardsBoxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsBoxApp.swift; sourceTree = "<group>"; };
-		F2029D2C26660EE600B2293B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F2029D2C26660EE600B2293B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F2029D2E26660EE800B2293B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F2029D3126660EE800B2293B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F2029D3326660EE800B2293B /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		F2029D3626660EE800B2293B /* CardsBox.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CardsBox.xcdatamodel; sourceTree = "<group>"; };
 		F2029D3826660EE800B2293B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F298567C267280DA00488327 /* CardViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +58,8 @@
 		F2029D2926660EE600B2293B /* CardsBox */ = {
 			isa = PBXGroup;
 			children = (
-				F2029D2A26660EE600B2293B /* CardsBoxApp.swift */,
-				F2029D2C26660EE600B2293B /* ContentView.swift */,
+				F2B6C1412667EC3D00EC9025 /* Application */,
+				F2B6C13F2667EC2500EC9025 /* Screens */,
 				F2029D2E26660EE800B2293B /* Assets.xcassets */,
 				F2029D3326660EE800B2293B /* Persistence.swift */,
 				F2029D3826660EE800B2293B /* Info.plist */,
@@ -73,6 +75,63 @@
 				F2029D3126660EE800B2293B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F298567B267280B500488327 /* CardViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				F298567C267280DA00488327 /* CardViewCell.swift */,
+			);
+			path = CardViewCell;
+			sourceTree = "<group>";
+		};
+		F2B6C13F2667EC2500EC9025 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				F2B6C1402667EC3400EC9025 /* Home */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		F2B6C1402667EC3400EC9025 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F2B6C1442667EC9100EC9025 /* Model */,
+				F2B6C1432667EC8800EC9025 /* ViewModel */,
+				F2B6C1422667EC8200EC9025 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F2B6C1412667EC3D00EC9025 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				F2029D2A26660EE600B2293B /* CardsBoxApp.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		F2B6C1422667EC8200EC9025 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F298567B267280B500488327 /* CardViewCell */,
+				F2029D2C26660EE600B2293B /* HomeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F2B6C1432667EC8800EC9025 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F2B6C1442667EC9100EC9025 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,7 +204,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2029D3426660EE800B2293B /* Persistence.swift in Sources */,
-				F2029D2D26660EE600B2293B /* ContentView.swift in Sources */,
+				F2029D2D26660EE600B2293B /* HomeView.swift in Sources */,
+				F298567D267280DA00488327 /* CardViewCell.swift in Sources */,
 				F2029D2B26660EE600B2293B /* CardsBoxApp.swift in Sources */,
 				F2029D3726660EE800B2293B /* CardsBox.xcdatamodeld in Sources */,
 			);
@@ -280,7 +340,7 @@
 				DEVELOPMENT_TEAM = ACK684Q2U7;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = CardsBox/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,7 +362,7 @@
 				DEVELOPMENT_TEAM = ACK684Q2U7;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = CardsBox/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
