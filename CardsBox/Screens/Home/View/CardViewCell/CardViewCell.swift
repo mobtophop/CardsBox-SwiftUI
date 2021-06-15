@@ -8,12 +8,10 @@
 import SwiftUI
 
 struct CardViewCell: View {
-    private(set) var name: String
-    private(set) var lastName: String
+    private(set) var user: User
     
-    init(name: String, lastName: String) {
-        self.name = name
-        self.lastName = lastName
+    init(user: User) {
+        self.user = user
     }
     
     var body: some View {
@@ -22,8 +20,8 @@ struct CardViewCell: View {
                 .resizable()
                 .frame(width: 50, height: 40, alignment: .leading)
             VStack(alignment: .leading) {
-                Text(name)
-                Text(lastName)
+                Text(user.userName ?? "")
+                Text(user.lastName ?? "")
             }
             Spacer()
         }.padding(3)
@@ -32,7 +30,7 @@ struct CardViewCell: View {
 
 struct CardViewCell_Previews: PreviewProvider {
     static var previews: some View {
-        CardViewCell(name: "Ivan", lastName: "Ivanov")
+        CardViewCell(user: User())
             .previewLayout(.sizeThatFits)
     }
 }

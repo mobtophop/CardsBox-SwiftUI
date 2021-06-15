@@ -14,6 +14,7 @@ struct CardsBoxApp: App {
     var body: some Scene {
         WindowGroup {
             HomeView()
+                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }

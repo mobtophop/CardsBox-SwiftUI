@@ -9,17 +9,19 @@ import SwiftUI
 
 struct HomeView: View {
     @State private var searchText = ""
+    @ObservedObject private var viewModel = HomeViewModel()
 
     var body: some View {
         NavigationView{
-            List(0...100, id: \.self) { item in
-                CardViewCell(name: "\(item)", lastName: "\(item + 1)")
+            List(viewModel.userList, id: \.self) { user in
+                CardViewCell(user: user)
             }
             .searchable(text: $searchText)
-            .navigationBarTitle("Cards Box")
+            .navigationBarTitle(Strings.mainTitle)
+            .navigationBarItems(trailing: Button(Strings.mainAddNewButton) {
+            })
         }
     }
-
 }
 
 struct HomeView_Previews: PreviewProvider {
