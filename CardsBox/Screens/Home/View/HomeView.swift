@@ -18,7 +18,8 @@ struct HomeView: View {
             }
             .searchable(text: $searchText)
             .navigationBarTitle(Strings.mainTitle)
-            .navigationBarItems(trailing: Button(Strings.mainAddNewButton) {
+            .navigationBarItems(trailing: NavigationLink(destination: CardDetailView()) {
+                Text(Strings.mainAddNewButton)
             })
         }
     }
