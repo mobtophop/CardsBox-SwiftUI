@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,7 +18,7 @@
 		F278DE692678DFFD00042F38 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F278DE682678DFFD00042F38 /* Localizable.strings */; };
 		F278DE6B2678E0A800042F38 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = F278DE6A2678E0A800042F38 /* Localization.swift */; };
 		F278DE742678F94B00042F38 /* CardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F278DE732678F94B00042F38 /* CardDetailView.swift */; };
-		F298567D267280DA00488327 /* CardViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F298567C267280DA00488327 /* CardViewCell.swift */; };
+		F298567D267280DA00488327 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F298567C267280DA00488327 /* CardView.swift */; };
 		F29A47D22677B0D8009BCDD1 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29A47D12677B0D8009BCDD1 /* HomeViewModel.swift */; };
 		F29A47DA2677C20B009BCDD1 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29A47D62677C20B009BCDD1 /* User+CoreDataClass.swift */; };
 		F29A47DB2677C20B009BCDD1 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29A47D72677C20B009BCDD1 /* User+CoreDataProperties.swift */; };
@@ -43,7 +43,7 @@
 		F278DE682678DFFD00042F38 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		F278DE6A2678E0A800042F38 /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 		F278DE732678F94B00042F38 /* CardDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailView.swift; sourceTree = "<group>"; };
-		F298567C267280DA00488327 /* CardViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewCell.swift; sourceTree = "<group>"; };
+		F298567C267280DA00488327 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		F29A47D12677B0D8009BCDD1 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		F29A47D62677C20B009BCDD1 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		F29A47D72677C20B009BCDD1 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -179,12 +179,12 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		F298567B267280B500488327 /* CardViewCell */ = {
+		F298567B267280B500488327 /* CardView */ = {
 			isa = PBXGroup;
 			children = (
-				F298567C267280DA00488327 /* CardViewCell.swift */,
+				F298567C267280DA00488327 /* CardView.swift */,
 			);
-			path = CardViewCell;
+			path = CardView;
 			sourceTree = "<group>";
 		};
 		F29A47D32677B2A9009BCDD1 /* CoreData */ = {
@@ -239,7 +239,7 @@
 		F2B6C1422667EC8200EC9025 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F298567B267280B500488327 /* CardViewCell */,
+				F298567B267280B500488327 /* CardView */,
 				F2029D2C26660EE600B2293B /* HomeView.swift */,
 			);
 			path = View;
@@ -268,7 +268,7 @@
 			buildConfigurationList = F2029D3B26660EE800B2293B /* Build configuration list for PBXNativeTarget "CardsBox" */;
 			buildPhases = (
 				1CF96A4B16691A0EEDD9D632 /* [CP] Check Pods Manifest.lock */,
-				F278DE6C2678E51F00042F38 /* SwiftGen */,
+				F2C874CD26C272AD00BEC696 /* SwiftGen */,
 				F2029D2326660EE600B2293B /* Sources */,
 				F2029D2426660EE600B2293B /* Frameworks */,
 				F2029D2526660EE600B2293B /* Resources */,
@@ -350,7 +350,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F278DE6C2678E51F00042F38 /* SwiftGen */ = {
+		F2C874CD26C272AD00BEC696 /* SwiftGen */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -366,7 +366,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"$PODS_ROOT\"/SwiftGen/bin/swiftgen config run --config \"$PROJECT_DIR\"/swiftgen.yml\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$PODS_ROOT\"/SwiftGen/bin/swiftgen config run --config \"$PROJECT_DIR\"/swiftgen.yml\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -384,7 +384,7 @@
 				F29A47DB2677C20B009BCDD1 /* User+CoreDataProperties.swift in Sources */,
 				F29A47DF2677C562009BCDD1 /* ObservableCoreData.swift in Sources */,
 				F2029D2D26660EE600B2293B /* HomeView.swift in Sources */,
-				F298567D267280DA00488327 /* CardViewCell.swift in Sources */,
+				F298567D267280DA00488327 /* CardView.swift in Sources */,
 				F2029D2B26660EE600B2293B /* CardsBoxApp.swift in Sources */,
 				F278DE742678F94B00042F38 /* CardDetailView.swift in Sources */,
 				F2029D3726660EE800B2293B /* CardsBox.xcdatamodeld in Sources */,
@@ -446,7 +446,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -501,7 +501,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -522,7 +522,7 @@
 				DEVELOPMENT_TEAM = ACK684Q2U7;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = CardsBox/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -545,7 +545,7 @@
 				DEVELOPMENT_TEAM = ACK684Q2U7;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = CardsBox/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

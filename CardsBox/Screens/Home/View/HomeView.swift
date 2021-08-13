@@ -10,18 +10,17 @@ import SwiftUI
 struct HomeView: View {
     @State private var searchText = ""
     @ObservedObject private var viewModel = HomeViewModel()
-
+    
     var body: some View {
-        NavigationView{
-            List(viewModel.userList, id: \.self) { user in
-                CardViewCell(user: user)
-            }
-            .searchable(text: $searchText)
-            .navigationBarTitle(Strings.mainTitle)
-            .navigationBarItems(trailing: NavigationLink(destination: CardDetailView()) {
-                Text(Strings.mainAddNewButton)
-            })
+        List(0...10, id: \.self) { _ in
+            CardView(cardType: "VISA", cardNumber: "4149 6293 9504 0884", cardHolderName: "Alexander Malygin", expDate: "21/10")
         }
+        .listStyle(GroupedListStyle())
+        .navigationBarTitle(Strings.mainTitle)
+        .navigationBarItems(trailing: NavigationLink(destination: CardDetailView()) {
+            Image(systemName: "plus")
+                .font(.system(size: 24.0, weight: .medium))
+        })
     }
 }
 

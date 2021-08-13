@@ -35,6 +35,6 @@ class HomeViewModel: ObservableObject, HomeViewModelProtocol {
     
     // MARK: - Get card list
     func getCardList() {
-        
+
     }
 }
