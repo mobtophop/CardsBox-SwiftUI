@@ -9,15 +9,15 @@ import Foundation
 import Combine
 
 protocol HomeViewModelProtocol {
-    func addNewCard(_ card: Card)
-    func createUser(_ user: User)
+    func addNewCard(_ card: String)
+    func createUser(_ user: String)
     func getCardList()
 }
 
 class HomeViewModel: ObservableObject, HomeViewModelProtocol {
     // MARK: - Properties
-    @Published var cardList: [Card] = []
-    @Published var userList: [User] = []
+    @Published var cardList: [String] = []
+    @Published var userList: [String] = []
     
     // MARK: - Init
     init() {
@@ -25,11 +25,11 @@ class HomeViewModel: ObservableObject, HomeViewModelProtocol {
     }
     
     // MARK: - Create new card for user
-    func addNewCard(_ card: Card) {
+    func addNewCard(_ card: String) {
         
     }
     // MARK: - Create new user
-    func createUser(_ user: User) {
+    func createUser(_ user: String) {
         
     }
     

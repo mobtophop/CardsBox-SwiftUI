@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,12 +18,11 @@
 		F278DE692678DFFD00042F38 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F278DE682678DFFD00042F38 /* Localizable.strings */; };
 		F278DE6B2678E0A800042F38 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = F278DE6A2678E0A800042F38 /* Localization.swift */; };
 		F278DE742678F94B00042F38 /* CardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F278DE732678F94B00042F38 /* CardDetailView.swift */; };
+		F2948C5D26C6B67700F6881C /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2948C5C26C6B67700F6881C /* UIColor+Extension.swift */; };
+		F2948C5F26C6B8FD00F6881C /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2948C5E26C6B8FD00F6881C /* Constant.swift */; };
+		F2948C6126C6BB6600F6881C /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2948C6026C6BB6600F6881C /* View+Extension.swift */; };
 		F298567D267280DA00488327 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F298567C267280DA00488327 /* CardView.swift */; };
 		F29A47D22677B0D8009BCDD1 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29A47D12677B0D8009BCDD1 /* HomeViewModel.swift */; };
-		F29A47DA2677C20B009BCDD1 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29A47D62677C20B009BCDD1 /* User+CoreDataClass.swift */; };
-		F29A47DB2677C20B009BCDD1 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29A47D72677C20B009BCDD1 /* User+CoreDataProperties.swift */; };
-		F29A47DC2677C20B009BCDD1 /* Card+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29A47D82677C20B009BCDD1 /* Card+CoreDataClass.swift */; };
-		F29A47DD2677C20B009BCDD1 /* Card+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29A47D92677C20B009BCDD1 /* Card+CoreDataProperties.swift */; };
 		F29A47DF2677C562009BCDD1 /* ObservableCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29A47DE2677C562009BCDD1 /* ObservableCoreData.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,12 +42,11 @@
 		F278DE682678DFFD00042F38 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		F278DE6A2678E0A800042F38 /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 		F278DE732678F94B00042F38 /* CardDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailView.swift; sourceTree = "<group>"; };
+		F2948C5C26C6B67700F6881C /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		F2948C5E26C6B8FD00F6881C /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		F2948C6026C6BB6600F6881C /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		F298567C267280DA00488327 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		F29A47D12677B0D8009BCDD1 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		F29A47D62677C20B009BCDD1 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
-		F29A47D72677C20B009BCDD1 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		F29A47D82677C20B009BCDD1 /* Card+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+CoreDataClass.swift"; sourceTree = "<group>"; };
-		F29A47D92677C20B009BCDD1 /* Card+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F29A47DE2677C562009BCDD1 /* ObservableCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableCoreData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,6 +100,7 @@
 		F2029D2926660EE600B2293B /* CardsBox */ = {
 			isa = PBXGroup;
 			children = (
+				F2948C5B26C6B66400F6881C /* Extensions */,
 				F26F1945267913EA0070C148 /* CustomViews */,
 				F29A47E12677CD32009BCDD1 /* Resources */,
 				F2B6C1412667EC3D00EC9025 /* Application */,
@@ -179,6 +178,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		F2948C5B26C6B66400F6881C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F2948C5C26C6B67700F6881C /* UIColor+Extension.swift */,
+				F2948C6026C6BB6600F6881C /* View+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		F298567B267280B500488327 /* CardView */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,10 +198,6 @@
 		F29A47D32677B2A9009BCDD1 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				F29A47D62677C20B009BCDD1 /* User+CoreDataClass.swift */,
-				F29A47D72677C20B009BCDD1 /* User+CoreDataProperties.swift */,
-				F29A47D82677C20B009BCDD1 /* Card+CoreDataClass.swift */,
-				F29A47D92677C20B009BCDD1 /* Card+CoreDataProperties.swift */,
 				F2029D3326660EE800B2293B /* Persistence.swift */,
 				F29A47DE2677C562009BCDD1 /* ObservableCoreData.swift */,
 			);
@@ -205,6 +209,7 @@
 			children = (
 				F278DE672678DDA100042F38 /* SwiftGen */,
 				F278DE682678DFFD00042F38 /* Localizable.strings */,
+				F2948C5E26C6B8FD00F6881C /* Constant.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -375,20 +380,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F29A47DC2677C20B009BCDD1 /* Card+CoreDataClass.swift in Sources */,
-				F29A47DD2677C20B009BCDD1 /* Card+CoreDataProperties.swift in Sources */,
 				F278DE6B2678E0A800042F38 /* Localization.swift in Sources */,
+				F2948C6126C6BB6600F6881C /* View+Extension.swift in Sources */,
+				F2948C5F26C6B8FD00F6881C /* Constant.swift in Sources */,
 				F26F194926791A7F0070C148 /* CustomTextFieldView.swift in Sources */,
 				F2029D3426660EE800B2293B /* Persistence.swift in Sources */,
 				F29A47D22677B0D8009BCDD1 /* HomeViewModel.swift in Sources */,
-				F29A47DB2677C20B009BCDD1 /* User+CoreDataProperties.swift in Sources */,
 				F29A47DF2677C562009BCDD1 /* ObservableCoreData.swift in Sources */,
 				F2029D2D26660EE600B2293B /* HomeView.swift in Sources */,
+				F2948C5D26C6B67700F6881C /* UIColor+Extension.swift in Sources */,
 				F298567D267280DA00488327 /* CardView.swift in Sources */,
 				F2029D2B26660EE600B2293B /* CardsBoxApp.swift in Sources */,
 				F278DE742678F94B00042F38 /* CardDetailView.swift in Sources */,
 				F2029D3726660EE800B2293B /* CardsBox.xcdatamodeld in Sources */,
-				F29A47DA2677C20B009BCDD1 /* User+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

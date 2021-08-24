@@ -12,12 +12,15 @@ struct CardView: View {
     var cardNumber: String
     var cardHolderName: String
     var expDate: String
-    
-    init(cardType: String, cardNumber: String, cardHolderName: String, expDate: String) {
+    var backgroundCard: [Color]
+
+    init(cardType: String, cardNumber: String, cardHolderName: String,
+         expDate: String, backgroundCard: [Color]) {
         self.cardType = cardType
         self.cardNumber = cardNumber
         self.cardHolderName = cardHolderName
         self.expDate = expDate
+        self.backgroundCard = backgroundCard
     }
     
     var body: some View {
@@ -37,30 +40,36 @@ struct CardView: View {
                 .fontWeight(.bold)
                 .padding([.top, .bottom])
             HStack {
-                CardButtonInfo(title: "Card Holder Name",
+                CardBottomInfo(title: "Card Holder Name",
                                detail: cardHolderName)
                 Spacer()
-                CardButtonInfo(title: "Exp Date",
+                CardBottomInfo(title: "Exp Date",
                                detail: expDate)
             }
             Spacer()
         }
         .padding([.top, .bottom], 5)
         .padding([.leading, .trailing], 25)
-        .background(Color.black)
+        .background(LinearGradient(gradient: Gradient(colors: backgroundCard),
+                                   startPoint: .topLeading,
+                                   endPoint: .bottomTrailing))
         .cornerRadius(20.0)
-        .frame(height: 180)
+        .frame(height: 190)
     }
 }
 
 struct CardViewCell_Previews: PreviewProvider {
     static var previews: some View {
-        CardView(cardType: "VISA", cardNumber: "4149 6293 9504 0884", cardHolderName: "Alexander Malygin", expDate: "21/10")
-            .previewLayout(.fixed(width: 390, height: 215))
+        CardView(cardType: "VISA",
+                 cardNumber: "4149 6293 9504 0884",
+                 cardHolderName: "Alexander Malygin",
+                 expDate: "21/10",
+                 backgroundCard: defaultCardBackground)
+            .previewLayout(.fixed(width: 390, height: 190))
     }
 }
 
-struct CardButtonInfo: View {
+struct CardBottomInfo: View {
     private var title: String
     private var detail: String
     
