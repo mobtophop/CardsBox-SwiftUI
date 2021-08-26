@@ -31,6 +31,7 @@ struct HomeView: View {
                         .listRowBackground(grayBackgroundView)
                 }
             }
+            .onDelete(perform: delete)
             .onMove(perform: move)
         }
         .toolbar {
@@ -38,13 +39,7 @@ struct HomeView: View {
         }
         .listStyle(PlainListStyle())
         .navigationBarTitle(Strings.mainTitle)
-        .navigationBarItems(trailing: Button(action: {
-            mode = .create
-            isShowingDetails = true
-        }, label: {
-            Image(systemName: "plus")
-                .font(.system(size: 24.0, weight: .medium))
-        }))
+        .navigationBarItems(trailing: EditButton())
         .sheet(isPresented: $isShowingDetails) {
             CardDetailView(viewMode: $mode, cardModel: $selectedCardModel)
         }
