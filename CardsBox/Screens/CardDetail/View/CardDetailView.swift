@@ -25,14 +25,17 @@ struct CardDetailView: View {
                 VStack(spacing: 25) {
                     Spacer()
                     CardView(cardType: "VISA",
-                             cardNumber: viewMode == .create ? cardNumber : cardModel,
+                             cardNumber: cardNumber,
                              cardHolderName: userName,
-                             expDate: "21/10",
                              backgroundCard: defaultCardBackground)
                     Spacer()
                     
                     VStack(spacing: 15) {
                         TextFieldView("Card Number", text: $cardNumber, maxLenth: 16)
+                            .onChange(of: cardNumber, perform: { value in
+                                debugPrint(value)
+                                cardModel = value
+                            })
                             .keyboardType(.numberPad)
                         TextFieldView("Enter name", text: $userName, maxLenth: 25)
                     }
@@ -53,6 +56,10 @@ struct CardDetailView: View {
             .onTapGesture {
                 hideKeyboard()
             }
+        }
+        .onAppear() {
+            cardNumber = viewMode == .create ? "" : cardModel
+            userName = viewMode == .create ? "" : cardModel
         }
         .background(grayBackgroundView)
         .ignoresSafeArea(.all, edges: .bottom)

@@ -25,7 +25,6 @@ struct HomeView: View {
                     CardView(cardType: "VISA",
                              cardNumber: "4149629395040884",
                              cardHolderName: "Alexander Malygin",
-                             expDate: "21/10",
                              backgroundCard: defaultCardBackground)
                         .listRowInsets(.init(top: 5, leading: 0, bottom: 5, trailing: 0))
                         .listRowBackground(grayBackgroundView)
@@ -39,7 +38,13 @@ struct HomeView: View {
         }
         .listStyle(PlainListStyle())
         .navigationBarTitle(Strings.mainTitle)
-        .navigationBarItems(trailing: EditButton())
+        .navigationBarItems(trailing: Button(action: {
+            mode = .create
+            isShowingDetails = true
+        }, label: {
+            Image(systemName: "plus")
+                .font(.system(size: 24.0, weight: .medium))
+        }))
         .sheet(isPresented: $isShowingDetails) {
             CardDetailView(viewMode: $mode, cardModel: $selectedCardModel)
         }

@@ -11,15 +11,13 @@ struct CardView: View {
     var cardType: String
     var cardNumber: String
     var cardHolderName: String
-    var expDate: String
     var backgroundCard: [Color]
     
-    init(cardType: String, cardNumber: String, cardHolderName: String,
-         expDate: String, backgroundCard: [Color]) {
+    init(cardType: String, cardNumber: String,
+         cardHolderName: String, backgroundCard: [Color]) {
         self.cardType = cardType
         self.cardNumber = cardNumber
         self.cardHolderName = cardHolderName
-        self.expDate = expDate
         self.backgroundCard = backgroundCard
     }
     
@@ -55,9 +53,6 @@ struct CardView: View {
                                detail: cardHolderName,
                                placeholder: "Ivanon Ivan")
                 Spacer()
-                CardBottomInfo(title: "Exp Date",
-                               detail: expDate,
-                               placeholder: "22/02")
             }
             Spacer()
         }
@@ -76,7 +71,6 @@ struct CardViewCell_Previews: PreviewProvider {
         CardView(cardType: "VISA",
                  cardNumber: "",
                  cardHolderName: "",
-                 expDate: "",
                  backgroundCard: defaultCardBackground)
             .previewLayout(.fixed(width: 390, height: 190))
     }
