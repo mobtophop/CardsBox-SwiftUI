@@ -13,9 +13,10 @@ enum CardDetailMode {
 }
 
 struct CardDetailView: View {
-    @State var userName: String = ""
-    @State var cardNumber: String = ""
-    var viewMode: CardDetailMode = .create
+    @State private var userName: String = ""
+    @State private var cardNumber: String = ""
+    @Binding var viewMode: CardDetailMode
+    @Binding var cardModel: String
     
     var body: some View {
         VStack(alignment: .trailing) {
@@ -24,25 +25,27 @@ struct CardDetailView: View {
                 VStack(spacing: 25) {
                     Spacer()
                     CardView(cardType: "VISA",
-                             cardNumber: cardNumber,
+                             cardNumber: viewMode == .create ? cardNumber : cardModel,
                              cardHolderName: userName,
                              expDate: "21/10",
                              backgroundCard: defaultCardBackground)
                     Spacer()
                     
                     VStack(spacing: 15) {
-                        TextFieldView("Card Number", text: $cardNumber)
+                        TextFieldView("Card Number", text: $cardNumber, maxLenth: 16)
                             .keyboardType(.numberPad)
-                        TextFieldView("Enter name", text: $userName)
+                        TextFieldView("Enter name", text: $userName, maxLenth: 25)
                     }
-                    Button(action: {},
-                           label: {
-                            Text("Add")
-                                .frame(width: 250, height: 50)
-                                .background(Color.blue)
-                                .foregroundColor(.white)
-                                .cornerRadius(8.0)
-                           })
+                    Button(action: {
+                        debugPrint("card info", cardNumber, userName)
+                    },
+                    label: {
+                        Text("Add")
+                            .frame(width: 250, height: 50)
+                            .background(gradient1)
+                            .foregroundColor(.white)
+                            .cornerRadius(8.0)
+                    })
                     
                 }
                 .padding()
@@ -58,14 +61,14 @@ struct CardDetailView: View {
 
 struct CardDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        CardDetailView()
+        CardDetailView(viewMode: .constant(.create), cardModel: .constant(""))
     }
 }
 
 struct HeaderCardDetailView: View {
     @Environment(\.presentationMode) var presentationMode
     var title: String
-
+    
     var body: some View {
         HStack {
             Text(title)

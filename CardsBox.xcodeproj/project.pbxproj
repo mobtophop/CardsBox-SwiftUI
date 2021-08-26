@@ -14,6 +14,7 @@
 		F2029D3226660EE800B2293B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2029D3126660EE800B2293B /* Preview Assets.xcassets */; };
 		F2029D3426660EE800B2293B /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2029D3326660EE800B2293B /* Persistence.swift */; };
 		F2029D3726660EE800B2293B /* CardsBox.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F2029D3526660EE800B2293B /* CardsBox.xcdatamodeld */; };
+		F2242FBB26D5604200ED980E /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2242FBA26D5604200ED980E /* String+Extension.swift */; };
 		F26F194926791A7F0070C148 /* CustomTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26F194826791A7F0070C148 /* CustomTextFieldView.swift */; };
 		F278DE692678DFFD00042F38 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F278DE682678DFFD00042F38 /* Localizable.strings */; };
 		F278DE6B2678E0A800042F38 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = F278DE6A2678E0A800042F38 /* Localization.swift */; };
@@ -38,6 +39,7 @@
 		F2029D3326660EE800B2293B /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		F2029D3626660EE800B2293B /* CardsBox.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CardsBox.xcdatamodel; sourceTree = "<group>"; };
 		F2029D3826660EE800B2293B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F2242FBA26D5604200ED980E /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		F26F194826791A7F0070C148 /* CustomTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldView.swift; sourceTree = "<group>"; };
 		F278DE682678DFFD00042F38 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		F278DE6A2678E0A800042F38 /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 			children = (
 				F2948C5C26C6B67700F6881C /* UIColor+Extension.swift */,
 				F2948C6026C6BB6600F6881C /* View+Extension.swift */,
+				F2242FBA26D5604200ED980E /* String+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 				F29A47D22677B0D8009BCDD1 /* HomeViewModel.swift in Sources */,
 				F29A47DF2677C562009BCDD1 /* ObservableCoreData.swift in Sources */,
 				F2029D2D26660EE600B2293B /* HomeView.swift in Sources */,
+				F2242FBB26D5604200ED980E /* String+Extension.swift in Sources */,
 				F2948C5D26C6B67700F6881C /* UIColor+Extension.swift in Sources */,
 				F298567D267280DA00488327 /* CardView.swift in Sources */,
 				F2029D2B26660EE600B2293B /* CardsBoxApp.swift in Sources */,
