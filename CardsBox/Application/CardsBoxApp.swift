@@ -10,10 +10,13 @@ import SwiftUI
 @main
 struct CardsBoxApp: App {
     let persistenceController = PersistenceController.shared
-
+    
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            NavigationView{
+                HomeView()
+                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            }
         }
     }
 }

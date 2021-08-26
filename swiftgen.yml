@@ -1,0 +1,8 @@
+strings:
+  inputs: CardsBox/Resources/Localizable.strings
+  filter: .+\.strings$
+  outputs:
+    - templateName: structured-swift5
+      output: CardsBox/Resources/SwiftGen/Localization.swift
+      params:
+       enumName: Strings

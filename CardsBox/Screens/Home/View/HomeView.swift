@@ -9,17 +9,52 @@ import SwiftUI
 
 struct HomeView: View {
     @State private var searchText = ""
-
+    @State private var isShowingDetails = false
+    @State private var mode: CardDetailMode = .create
+    @State private var selectedCardModel: String = ""
+    @ObservedObject private var viewModel = HomeViewModel()
+    
     var body: some View {
-        NavigationView{
-            List(0...100, id: \.self) { item in
-                CardViewCell(name: "\(item)", lastName: "\(item + 1)")
+        List {
+            ForEach(0...30, id: \.self) { idx in
+                Button(action: {
+                    mode = .edit
+                    isShowingDetails = true
+                    selectedCardModel = "1234"
+                }) {
+                    CardView(cardType: "VISA",
+                             cardNumber: "4149629395040884",
+                             cardHolderName: "Alexander Malygin",
+                             backgroundCard: defaultCardBackground)
+                        .listRowInsets(.init(top: 5, leading: 0, bottom: 5, trailing: 0))
+                        .listRowBackground(grayBackgroundView)
+                }
             }
-            .searchable(text: $searchText)
-            .navigationBarTitle("Cards Box")
+            .onDelete(perform: delete)
+            .onMove(perform: move)
+        }
+        .toolbar {
+            EditButton()
+        }
+        .listStyle(PlainListStyle())
+        .navigationBarTitle(Strings.mainTitle)
+        .navigationBarItems(trailing: Button(action: {
+            mode = .create
+            isShowingDetails = true
+        }, label: {
+            Image(systemName: "plus")
+                .font(.system(size: 24.0, weight: .medium))
+        }))
+        .sheet(isPresented: $isShowingDetails) {
+            CardDetailView(viewMode: $mode, cardModel: $selectedCardModel)
         }
     }
-
+    
+    func delete(at offsets: IndexSet) {
+        
+    }
+    func move(from source: IndexSet, to destination: Int) {
+    }
 }
 
 struct HomeView_Previews: PreviewProvider {
