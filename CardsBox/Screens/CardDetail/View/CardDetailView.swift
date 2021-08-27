@@ -16,7 +16,8 @@ struct CardDetailView: View {
     @State private var userName: String = ""
     @State private var cardNumber: String = ""
     @Binding var viewMode: CardDetailMode
-    @Binding var cardModel: String
+    @Binding var cardModel: Card
+    @ObservedObject private var viewModel = CardDetailViewModel()
     
     var body: some View {
         VStack(alignment: .trailing) {
@@ -33,17 +34,20 @@ struct CardDetailView: View {
                     VStack(spacing: 15) {
                         TextFieldView("Card Number", text: $cardNumber, maxLenth: 16)
                             .onChange(of: cardNumber, perform: { value in
-                                debugPrint(value)
-                                cardModel = value
+                                cardNumber = value
                             })
                             .keyboardType(.numberPad)
                         TextFieldView("Enter name", text: $userName, maxLenth: 25)
+                            .onChange(of: userName, perform: { value in
+                                userName = value
+                            })
                     }
                     Button(action: {
-                        debugPrint("card info", cardNumber, userName)
+                        let card = CardModel(userName: userName, cardNumber: cardNumber)
+                        viewMode == .create ? viewModel.addNewCard(card) : viewModel.updateCard(card)
                     },
                     label: {
-                        Text("Add")
+                        Text( viewMode == .create ? "Add" : "Save")
                             .frame(width: 250, height: 50)
                             .background(gradient1)
                             .foregroundColor(.white)
@@ -58,19 +62,19 @@ struct CardDetailView: View {
             }
         }
         .onAppear() {
-            cardNumber = viewMode == .create ? "" : cardModel
-            userName = viewMode == .create ? "" : cardModel
+            cardNumber = (viewMode == .create ? "" : cardModel.cardNumber) ?? ""
+            userName = (viewMode == .create ? "" : cardModel.userName) ?? ""
         }
         .background(grayBackgroundView)
         .ignoresSafeArea(.all, edges: .bottom)
     }
 }
 
-struct CardDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        CardDetailView(viewMode: .constant(.create), cardModel: .constant(""))
-    }
-}
+//struct CardDetailView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CardDetailView(viewMode: .constant(.create), cardModel: .constant(""))
+//    }
+//}
 
 struct HeaderCardDetailView: View {
     @Environment(\.presentationMode) var presentationMode

@@ -25,6 +25,10 @@
 		F298567D267280DA00488327 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F298567C267280DA00488327 /* CardView.swift */; };
 		F29A47D22677B0D8009BCDD1 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29A47D12677B0D8009BCDD1 /* HomeViewModel.swift */; };
 		F29A47DF2677C562009BCDD1 /* ObservableCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29A47DE2677C562009BCDD1 /* ObservableCoreData.swift */; };
+		F2DA622026D7FA330080C72B /* CardDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DA621F26D7FA330080C72B /* CardDetailViewModel.swift */; };
+		F2DA622326D7FB320080C72B /* Card+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DA622126D7FB320080C72B /* Card+CoreDataClass.swift */; };
+		F2DA622426D7FB320080C72B /* Card+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DA622226D7FB320080C72B /* Card+CoreDataProperties.swift */; };
+		F2DA622626D804A80080C72B /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DA622526D804A80080C72B /* CardModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +54,10 @@
 		F298567C267280DA00488327 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		F29A47D12677B0D8009BCDD1 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		F29A47DE2677C562009BCDD1 /* ObservableCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableCoreData.swift; sourceTree = "<group>"; };
+		F2DA621F26D7FA330080C72B /* CardDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailViewModel.swift; sourceTree = "<group>"; };
+		F2DA622126D7FB320080C72B /* Card+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F2DA622226D7FB320080C72B /* Card+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F2DA622526D804A80080C72B /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +169,7 @@
 		F278DE702678F91800042F38 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F2DA622526D804A80080C72B /* CardModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -168,6 +177,7 @@
 		F278DE712678F91E00042F38 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				F2DA621F26D7FA330080C72B /* CardDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -201,6 +211,8 @@
 		F29A47D32677B2A9009BCDD1 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				F2DA622126D7FB320080C72B /* Card+CoreDataClass.swift */,
+				F2DA622226D7FB320080C72B /* Card+CoreDataProperties.swift */,
 				F2029D3326660EE800B2293B /* Persistence.swift */,
 				F29A47DE2677C562009BCDD1 /* ObservableCoreData.swift */,
 			);
@@ -384,13 +396,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				F278DE6B2678E0A800042F38 /* Localization.swift in Sources */,
+				F2DA622326D7FB320080C72B /* Card+CoreDataClass.swift in Sources */,
 				F2948C6126C6BB6600F6881C /* View+Extension.swift in Sources */,
 				F2948C5F26C6B8FD00F6881C /* Constant.swift in Sources */,
 				F26F194926791A7F0070C148 /* CustomTextFieldView.swift in Sources */,
+				F2DA622626D804A80080C72B /* CardModel.swift in Sources */,
 				F2029D3426660EE800B2293B /* Persistence.swift in Sources */,
 				F29A47D22677B0D8009BCDD1 /* HomeViewModel.swift in Sources */,
 				F29A47DF2677C562009BCDD1 /* ObservableCoreData.swift in Sources */,
 				F2029D2D26660EE600B2293B /* HomeView.swift in Sources */,
+				F2DA622026D7FA330080C72B /* CardDetailViewModel.swift in Sources */,
+				F2DA622426D7FB320080C72B /* Card+CoreDataProperties.swift in Sources */,
 				F2242FBB26D5604200ED980E /* String+Extension.swift in Sources */,
 				F2948C5D26C6B67700F6881C /* UIColor+Extension.swift in Sources */,
 				F298567D267280DA00488327 /* CardView.swift in Sources */,
