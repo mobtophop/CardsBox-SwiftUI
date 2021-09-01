@@ -31,8 +31,7 @@ struct HomeView: View {
                 }
                 .buttonStyle(PlainButtonStyle())
             }
-            .onDelete(perform: delete)
-            .onMove(perform: move)
+            .onDelete(perform: viewModel.delete)
         }
         .toolbar {
             EditButton()
@@ -40,21 +39,15 @@ struct HomeView: View {
         .listStyle(PlainListStyle())
         .navigationBarTitle(Strings.mainTitle)
         .navigationBarItems(trailing: Button(action: {
-            mode = .create
-            isShowingDetails = true
-        }, label: {
-            Image(systemName: "plus")
-                .font(.system(size: 24.0, weight: .medium))
-        }))
+                                mode = .create
+                                isShowingDetails = true
+                            }, label: {
+                                Image(systemName: "plus")
+                                    .font(.system(size: 24.0, weight: .medium))
+                            }))
         .sheet(isPresented: $isShowingDetails) {
             CardDetailView(viewMode: $mode, cardModel: $selectedCardModel)
         }
-    }
-    
-    func delete(at offsets: IndexSet) {
-        
-    }
-    func move(from source: IndexSet, to destination: Int) {
     }
 }
 

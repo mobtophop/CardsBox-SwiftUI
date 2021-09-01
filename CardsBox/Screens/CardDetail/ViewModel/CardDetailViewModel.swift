@@ -33,9 +33,8 @@ final class CardDetailViewModel: ObservableObject, CardDetailViewModelProtocol {
             let updateCard = try? context.fetch(request)
             updateCard?.first?.cardNumber = card.cardNumber
             updateCard?.first?.userName = card.userName
-            
+
             PersistenceController.shared.saveContext()
         }
-        HomeViewModel().getCardList()
     }
 }

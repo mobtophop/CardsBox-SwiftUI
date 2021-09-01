@@ -18,7 +18,7 @@ struct CardDetailView: View {
     @Binding var viewMode: CardDetailMode
     @Binding var cardModel: Card
     @ObservedObject private var viewModel = CardDetailViewModel()
-    
+
     var body: some View {
         VStack(alignment: .trailing) {
             HeaderCardDetailView(title: viewMode == .create ? "Create" : "Edit")
@@ -30,7 +30,7 @@ struct CardDetailView: View {
                              cardHolderName: userName,
                              backgroundCard: defaultCardBackground)
                     Spacer()
-                    
+
                     VStack(spacing: 15) {
                         TextFieldView("Card Number", text: $cardNumber, maxLenth: 16)
                             .onChange(of: cardNumber, perform: { value in
@@ -42,6 +42,7 @@ struct CardDetailView: View {
                                 userName = value
                             })
                     }
+                    
                     Button(action: {
                         let card = CardModel(userName: userName, cardNumber: cardNumber)
                         viewMode == .create ? viewModel.addNewCard(card) : viewModel.updateCard(card)
@@ -53,7 +54,6 @@ struct CardDetailView: View {
                             .foregroundColor(.white)
                             .cornerRadius(8.0)
                     })
-                    
                 }
                 .padding()
             }
