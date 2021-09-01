@@ -11,27 +11,27 @@ struct HomeView: View {
     @State private var searchText = ""
     @State private var isShowingDetails = false
     @State private var mode: CardDetailMode = .create
-    @State private var selectedCardModel: String = ""
+    @State private var selectedCardModel: Card = Card()
     @ObservedObject private var viewModel = HomeViewModel()
     
     var body: some View {
         List {
-            ForEach(0...30, id: \.self) { idx in
+            ForEach(viewModel.cardList) { card in
                 Button(action: {
                     mode = .edit
                     isShowingDetails = true
-                    selectedCardModel = "1234"
+                    selectedCardModel = card
                 }) {
                     CardView(cardType: "VISA",
-                             cardNumber: "4149629395040884",
-                             cardHolderName: "Alexander Malygin",
+                             cardNumber: card.cardNumber ?? "",
+                             cardHolderName: card.userName ?? "",
                              backgroundCard: defaultCardBackground)
                         .listRowInsets(.init(top: 5, leading: 0, bottom: 5, trailing: 0))
                         .listRowBackground(grayBackgroundView)
                 }
+                .buttonStyle(PlainButtonStyle())
             }
-            .onDelete(perform: delete)
-            .onMove(perform: move)
+            .onDelete(perform: viewModel.delete)
         }
         .toolbar {
             EditButton()
@@ -39,21 +39,15 @@ struct HomeView: View {
         .listStyle(PlainListStyle())
         .navigationBarTitle(Strings.mainTitle)
         .navigationBarItems(trailing: Button(action: {
-            mode = .create
-            isShowingDetails = true
-        }, label: {
-            Image(systemName: "plus")
-                .font(.system(size: 24.0, weight: .medium))
-        }))
+                                mode = .create
+                                isShowingDetails = true
+                            }, label: {
+                                Image(systemName: "plus")
+                                    .font(.system(size: 24.0, weight: .medium))
+                            }))
         .sheet(isPresented: $isShowingDetails) {
             CardDetailView(viewMode: $mode, cardModel: $selectedCardModel)
         }
-    }
-    
-    func delete(at offsets: IndexSet) {
-        
-    }
-    func move(from source: IndexSet, to destination: Int) {
     }
 }
 
