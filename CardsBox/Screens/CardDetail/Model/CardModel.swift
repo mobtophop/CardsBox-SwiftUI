@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct CardModel {
+struct CardModel: Identifiable {
+    var id: UUID
     var userName: String
     var cardNumber: String
 }

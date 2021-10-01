@@ -11,27 +11,27 @@ struct HomeView: View {
     @State private var searchText = ""
     @State private var isShowingDetails = false
     @State private var mode: CardDetailMode = .create
-    @State private var selectedCardModel: Card = Card()
+    @State private var selectedCardModel: CardModel?
     @ObservedObject private var viewModel = HomeViewModel()
     
     var body: some View {
         List {
-            ForEach(viewModel.cardList) { card in
+            ForEach(viewModel.cardList, id: \.id) { card in
                 Button(action: {
                     mode = .edit
                     isShowingDetails = true
                     selectedCardModel = card
                 }) {
                     CardView(cardType: "VISA",
-                             cardNumber: card.cardNumber ?? "",
-                             cardHolderName: card.userName ?? "",
+                             cardNumber: card.cardNumber,
+                             cardHolderName: card.userName,
                              backgroundCard: defaultCardBackground)
                         .listRowInsets(.init(top: 5, leading: 0, bottom: 5, trailing: 0))
                         .listRowBackground(grayBackgroundView)
                 }
                 .buttonStyle(PlainButtonStyle())
             }
-            .onDelete(perform: viewModel.delete)
+//            .onDelete(perform: viewModel.delete)
         }
         .toolbar {
             EditButton()
@@ -51,8 +51,8 @@ struct HomeView: View {
     }
 }
 
-struct HomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView()
-    }
-}
+//struct HomeView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        HomeView()
+//    }
+//}

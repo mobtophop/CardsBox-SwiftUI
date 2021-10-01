@@ -10,6 +10,20 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum Strings {
+  /// Add
+  internal static let actionAddTitle = Strings.tr("Localizable", "actionAddTitle")
+  /// OK
+  internal static let actionOkTitle = Strings.tr("Localizable", "actionOkTitle")
+  /// Save
+  internal static let actionSaveTitle = Strings.tr("Localizable", "actionSaveTitle")
+  /// Card Number
+  internal static let cardDetailCardNumberPlaceholder = Strings.tr("Localizable", "cardDetailCardNumberPlaceholder")
+  /// Enter name
+  internal static let cardDetailEnterNamePlaceholder = Strings.tr("Localizable", "cardDetailEnterNamePlaceholder")
+  /// Create
+  internal static let createModeTitle = Strings.tr("Localizable", "createModeTitle")
+  /// Edit
+  internal static let editModeTitle = Strings.tr("Localizable", "editModeTitle")
   /// Add New
   internal static let mainAddNewButton = Strings.tr("Localizable", "mainAddNewButton")
   /// Cards Box
