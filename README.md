@@ -7,4 +7,4 @@ Allows you to store bank card numbers in order to find the right bank card at a 
 <img width="564" alt="Screenshot 2021-10-01 at 2 28 21 PM" src="https://user-images.githubusercontent.com/28863076/135614368-dd14a3d6-c5fb-4f07-84bf-44f54c32e6d9.png">
 
 ## System support
-iOS 14+
+- [x] iOS 14+
