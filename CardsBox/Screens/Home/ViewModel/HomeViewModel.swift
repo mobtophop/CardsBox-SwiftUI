@@ -11,46 +11,22 @@ import CoreData
 
 final class HomeViewModel: ObservableObject {
     // MARK: - Properties
-    @Published private(set) var cardList: [Card] = []
+    @Published private(set) var cardList: [CardModel] = []
     private let context = PersistenceController.shared.context
     
     // MARK: - Init
     init() {
-        observeCardList()
-    }
-    
-    // MARK: - Get card list and observe DB
-    private func observeCardList() {
-        let subscriber = Subscribers.Sink<[Card], Error>(
-            receiveCompletion: { completion in
-                if case let .failure(error) = completion {
-                    debugPrint("Error get cards", error)
-                }}) { [weak self] cards in
-            self?.cardList = cards
-        }
-        
-        let request: NSFetchRequest<Card> = Card.fetchRequest()
-        ObservableCoreData(request: request,
-                           context: PersistenceController.shared.context)
-            .receive(subscriber: subscriber)
-    }
-    
-    func delete(at offsets: IndexSet) {
-       offsets.forEach { index in
-            let cardNumber = cardList[index].cardNumber
-            let request: NSFetchRequest<Card> = Card.fetchRequest()
-            request.predicate = NSPredicate(format: "cardNumber = %@", cardNumber ?? "")
-            let object = try? context.fetch(request)
-
-            do {
-                guard let card = object?.first else { return }
-                context.delete(card)
-                PersistenceController.shared.saveContext()
-            }
-        }
-    }
-    
-    func move(from source: IndexSet, to destination: Int) {
-        cardList.move(fromOffsets: source, toOffset: destination)
+        cardList = [
+            CardModel(id: UUID(), userName: "Alex Malygin",  cardNumber: "1234122333365554"),
+            CardModel(id: UUID(), userName: "Alex Malygin1", cardNumber: "1234122333365554"),
+            CardModel(id: UUID(), userName: "Alex Malygin2", cardNumber: "1234122333365554"),
+            CardModel(id: UUID(), userName: "Alex Malygin3", cardNumber: "1234122333365254"),
+            CardModel(id: UUID(), userName: "Alex Malygin4", cardNumber: "1234122333365554"),
+            CardModel(id: UUID(), userName: "Alex Malygin5", cardNumber: "1234122333365554"),
+            CardModel(id: UUID(), userName: "Alex Malygin6", cardNumber: "1234122333365554"),
+            CardModel(id: UUID(), userName: "Alex Malygin7", cardNumber: "1234122333361312"),
+            CardModel(id: UUID(), userName: "Alex Malygin8", cardNumber: "1234122333365554"),
+            CardModel(id: UUID(), userName: "Alex Malygin9", cardNumber: "1234122333365545"),
+        ]
     }
 }

@@ -3,3 +3,10 @@
 
 "mainTitle" = "Cards Box";
 "mainAddNewButton" = "Add New";
+"cardDetailCardNumberPlaceholder" = "Card Number";
+"cardDetailEnterNamePlaceholder" = "Enter name";
+"actionSaveTitle" = "Save";
+"actionAddTitle" = "Add";
+"actionOkTitle" = "OK";
+"createModeTitle" = "Create";
+"editModeTitle" = "Edit";
